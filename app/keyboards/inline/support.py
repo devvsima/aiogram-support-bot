@@ -9,7 +9,7 @@ from random import shuffle,choice
 from loader import dp
 
 support_callback = CallbackData("ask_support", "messages", "user_id", "as_user")
-cancel_support = CallbackData("cancel_support", "user_id")
+cancel_support_callback = CallbackData("cancel_support", "user_id")
 
 
 async def check_support_available(support_id):
@@ -60,7 +60,7 @@ async def support_keyboard(messages, user_id=None):
     if messages == "many":keyboard.add(
         InlineKeyboardButton(
             text="Завершить сеанс",
-            callback_data=cancel_support.new(user_id=contact_id)
+            callback_data=cancel_support_callback.new(user_id=contact_id)
         )
     )
     return keyboard

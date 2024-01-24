@@ -1,7 +1,7 @@
-# from loader import dp
-# from .big_brother import BigBrother
-# from .throttling import TrottlingMiddleware
+from aiogram import dispatcher
+from loader import dp
 
-# if __name__ == "middlewares":
-#     dp.middleware.setup(TrottlingMiddleware())
-#     dp.middleware.setup(BigBrother())
+from .support_middleware import SupportMiddleware
+
+if __name__ == "middlewares":
+    dp.middleware.setup(SupportMiddleware())

@@ -28,7 +28,7 @@ async def send_to_support(call: types.CallbackQuery,state: FSMContext, callback_
 async def get_support_message(message:types.Message, state: FSMContext):
     data = await state.get_data()
     second_id = data["second_id"]
-    await bot.send_message(second_id,"Вам сообщение! Можете ответить нажав на кнопк ниже")
+    await bot.send_message(second_id,f"Вам сообщение от '{message.from_user.full_name}'! Можете ответить нажав на кнопк ниже")
     keyboard = await support_keyboard(messages="one", user_id=message.from_user.id)
     await message.copy_to(second_id, reply_markup=keyboard)
     await message.answer("Сообщение было отправленно!")

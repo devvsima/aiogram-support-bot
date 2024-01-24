@@ -10,7 +10,7 @@ async def on_startup(_):
     await set_defualt_commands(dp=dp)
 
 async def on_shutdown(dispatcher: Dispatcher):
-    print("Shutting down...")
+    print("Shutting down...")   
 
 
 if __name__ == "__main__":

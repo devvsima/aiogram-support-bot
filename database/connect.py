@@ -3,7 +3,7 @@ from data.config import mongodb_url
 
 
 client = MongoClient(mongodb_url)
-db = client["goroscope"]
+db = client["support"]
 
 db_supporters = db.supporters
 
